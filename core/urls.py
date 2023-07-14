@@ -7,6 +7,9 @@ urlpatterns = [
     re_path('admin/', admin.site.urls),
     re_path('drf/', include('rest_framework.urls')),
 
+    # Api
+    re_path('api/', include((api_urlpatterns, 'api'), namespace="api")),
+
     # Schema
     re_path('api/schema', SpectacularAPIView.as_view(api_version='api'), name='api-schema'),
 
